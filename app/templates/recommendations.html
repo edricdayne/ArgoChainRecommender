@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Request Crops</title>
+  </head>
+  <body>
+
+    <div class="container" style="margin-top:2%;">
+      <div class="col-sm-6">
+
+        {% if resultsflag %}
+          <h6>No results found.</h6>
+        {% else %}
+        <h6>Generated recommendations:</h6>
+
+        <table class="table table-condensed table-striped table-hover">
+          <tr>
+            <td>Farmer</td>
+            <td>Rating</td>
+            <td>Price</td>
+            <td>Total Score</td>
+          </tr>
+          {% for farmer in farmers %}
+            <tr>
+              {% for data in farmer %}
+                <td>{{ data }}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </table>
+
+        {% endif %}
+      </div>
+    </div>
+
+  </body>
+</html>

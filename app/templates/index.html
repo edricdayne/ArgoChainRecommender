@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Request Crops</title>
+  </head>
+  <body>
+
+    <div class="container" style="margin-top:2%;">
+      <div class="col-sm-6">
+        <h6>Please complete the form below</h6>
+        <table class="table table-condensed table-striped">
+          <form method="POST" action="{{ url_for('recommendations') }}">
+          <tr>
+            <td>Location</td>
+            <td><select class="form-control" name="location">
+              <option value="ktm">Kathmandu</option>
+              <option value="pkr">Pokhara</option>
+              <option value="brt">Biratnagar</option>
+              <option value="btl">Butwal</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td>Crop</td>
+            <td><select class="form-control" name="crop">
+              <option value="wht">Wheat</option>
+              <option value="crn">Corn</option>
+              <option value="rce">Rice</option>
+              <option value="sgc">Sugarcane</option>
+              <option value="tbc">Tobacco</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td>Price Range</td>
+            <td><input type="number" name="price-top" placeholder="Price Low" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="number" name="price-low" placeholder="Price High" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td>Quantity</td>
+            <td><input type="number" name="quantity" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" name="" value="Submit" class="btn"></td>
+          </tr>
+          </form>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>
