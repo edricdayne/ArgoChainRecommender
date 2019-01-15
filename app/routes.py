@@ -31,7 +31,7 @@ def recommendations():
 
     for farmer in farmers:
         farmer = farmer.strip().split(',')
-        if farmer[1] == location and farmer[3] == crop and int(farmer[4]) >= quantity:
+        if farmer[1] == location and farmer[3] == crop and int(farmer[4]) >= int(quantity):
 
             rating_score = float(farmer[2]) * 2
             price_score = int(((1000 - min((int(farmer[5]) - average_price), 1000))/1000)*10)
